@@ -16,7 +16,7 @@ const Stack = function(){
   this.pop = function(){
     if(this.length > 0){ //Check for Underflow error
       let last = this.list[this.list.length -1]; //Get Last item
-      delete this.list[this.length -1]; //Delete Last Item
+      this.list.splice(this.length -1, 1); //Delete Last Item
       this.length -= 1; //Decrease the length
       return last;
     }

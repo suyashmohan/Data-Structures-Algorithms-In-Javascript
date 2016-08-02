@@ -11,10 +11,12 @@ const Stack = function(){
   }
 
   this.pop = function(){
-    let last = this.list[this.list.length -1];
-    delete this.list[this.length -1];
-    this.length -= 1;
-    return last;
+    if(this.length > 0){
+      let last = this.list[this.list.length -1];
+      delete this.list[this.length -1];
+      this.length -= 1;
+      return last;
+    }
   }
 
   this.traverse = function(process){

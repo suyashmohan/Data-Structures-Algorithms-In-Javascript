@@ -11,10 +11,12 @@ const Queue = function(){
   }
 
   this.delete = function(){
-    let first = this.list[0];
-    this.list.splice(0, 1);
-    this.length -= 1;
-    return first;
+    if(this.length > 0){
+      let first = this.list[0];
+      this.list.splice(0, 1);
+      this.length -= 1;
+      return first;
+    }
   }
 
   this.traverse = function(process){

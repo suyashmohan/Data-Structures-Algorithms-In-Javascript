@@ -47,6 +47,51 @@ const LinkedList = function(){
     }
   }
 
+  //Delete node from starting of list
+  this.deleteFromBeg = function(){
+    //If list is empty ignore
+    if(this.start != null){
+      if(this.start.next == null){
+        //If this is the first node, delete itself
+        this.start == null;
+      }else{
+        //Assign next of starting as starting itself
+        let node = this.start.next;
+        this.start = node;
+      }
+    }
+  }
+
+  this.deleteWithValue = function(value){
+    let ptr = this.start;
+    let prev = null;
+
+    let loc = null;
+
+    //Travere the list
+    while(ptr!= null){
+      //If node with info is found save it
+      if(ptr.value == value){
+        loc = ptr;
+        break;
+      }
+
+      prev = ptr;
+      ptr = ptr.next;
+    }
+
+    //If Node with Info is Found
+    if(loc != null){
+      if(prev != null){
+        //Set previous to deleted Node's next
+        prev.next = loc.next;
+      }else{
+        //If prev is null, then found node is first node
+        this.start = this.start.next;
+      }
+    }
+  }
+
   //Traverse the list
   this.traverse = function(process){
     let ptr = this.start;

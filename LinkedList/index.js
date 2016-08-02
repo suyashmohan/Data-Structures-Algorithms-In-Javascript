@@ -22,3 +22,11 @@ printList(list);
 list.insertAfter('Rajeshwar', 'Madhav');
 list.insertAfter('Madhav', 'Vishnu');
 printList(list);
+
+list.deleteFromBeg();
+list.deleteFromBeg();
+printList(list);
+
+list.deleteWithValue('Nishchay');
+list.deleteWithValue('Vishnu');
+printList(list);

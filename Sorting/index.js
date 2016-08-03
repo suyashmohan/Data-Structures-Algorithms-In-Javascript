@@ -3,15 +3,27 @@
 const Bubble = require('./BubbleSort');
 const Selection = require('./SelectionSort');
 const Insertion = require('./InsertionSort');
+const Quick = require('./QuickSort');
 
-let arr = [56, 12, 36, 78, 92, 25, 87, 43];
-console.log('Array : ', arr);
+const createRandomArray = function(size, limit){
+  let array = new Array();
+  for(let i=0; i<size; ++i){
+    array.push(Math.floor(Math.random()*limit));
+  }
+  return array;
+}
+
+let arr = createRandomArray(10, 100);
+console.log('Unsorted Array                : ', arr);
 
 let bubbleResult = Bubble.Sort(arr);
-console.log('Bubble Sorted Array : ', bubbleResult);
+console.log('Bubble Sort    - Sorted Array : ', bubbleResult);
 
 let selectionResult = Selection.Sort(arr);
-console.log('Selection Sorted Array : ', selectionResult);
+console.log('Selection Sort - Sorted Array : ', selectionResult);
 
 let insertionResult = Insertion.Sort(arr);
-console.log('Insertion Sorted Array : ', insertionResult);
+console.log('Insertion Sort - Sorted Array : ', insertionResult);
+
+let quickResult = Quick.Sort(arr);
+console.log('QuickSort      - Sorted Array : ', quickResult);
